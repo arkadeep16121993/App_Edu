@@ -2,6 +2,22 @@
 
 A mobile-first NEET Physics MVP built from the supplied October 2026 technical specification. React + TypeScript frontend, Hono Worker API, D1, Better Auth, IndexedDB and a Razorpay subscription integration. No AI provider, inference service or AI key is used.
 
+## Download or clone the MVP on your Mac
+
+The MVP is on the **`mvp/physics-path` branch**. GitHub's `main` branch is separate.
+
+On [the MVP branch](https://github.com/arkadeep16121993/App_Edu/tree/mvp/physics-path), choose **Code → Download ZIP** and extract the archive on your Mac. Open that extracted folder in your local editor or Codex. GitHub's ZIP contains the source but not Git history. To get a local Git repository, clone instead:
+
+```sh
+mkdir -p ~/Developer
+git clone --branch mvp/physics-path https://github.com/arkadeep16121993/App_Edu.git ~/Developer/Physics-Path
+cd ~/Developer/Physics-Path
+npm ci
+npm run local
+```
+
+Install Node.js 24 LTS first. When the terminal reports Ready, open **http://localhost:8787** on that Mac. Keep Terminal running; Control-C stops the app. The frontend, backend and SQLite database run locally, with accounts and payments disabled. No deployment is performed. If the destination folder already exists, choose another empty location rather than replacing your work.
+
 ## Try it on your own computer
 
 See [LOCAL-TESTING.md](LOCAL-TESTING.md) for downloadable guest-preview and full-source instructions. The full local workflow is `npm ci` followed by `npm run local`. Use the Feedback panel to save notes and export a report; notes are never sent automatically.

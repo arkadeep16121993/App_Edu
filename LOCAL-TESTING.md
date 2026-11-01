@@ -2,6 +2,12 @@
 
 The cloud workspace's localhost address is not reachable from your computer. Download and extract one of the prepared ZIP files instead. Do not open `index.html` directly: use one of the local servers below so storage and the service worker work correctly.
 
+## Get the code from GitHub
+
+Open https://github.com/arkadeep16121993/App_Edu/tree/mvp/physics-path and use **Code → Download ZIP**. The application is on `mvp/physics-path`; it is not on `main`. Extract the source on your Mac, install Node.js 24 LTS, then run `npm ci` and `npm run local` in the extracted folder. Alternatively use the Git clone commands in README.md to retain Git history.
+
+Workspace paths such as `/workspace/scratch/...` are internal cloud paths and are not downloadable GitHub attachments. The earlier preview ZIPs are not published releases. You can generate a standalone guest HTML locally after `npm run build` with `python3 scripts/package-singlefile.py`; it is written to `dist/releases/physics-path-open-me.html`.
+
 ## Simplest Mac preview — no server
 
 Download `physics-path-open-me.zip`, extract it in Finder, then double-click `Physics-Path.html`. It embeds the guest app, scripts and fonts in one file. You do not need Python, Node or a localhost link. It is a guest-only UI preview, with account and payment features off. Browser file-origin storage varies; use the server options below if the browser reports storage unavailable. The single-file bundle was checked through an HTTP harness without external asset requests; direct file navigation was blocked by the cloud browser’s administrator policy, so a Mac file-origin test has not been claimed.
