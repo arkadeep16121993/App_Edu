@@ -1,0 +1,51 @@
+{
+  "name": "physics-path",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "dev:api": "wrangler dev --ip 0.0.0.0 --port 8787",
+    "build": "tsc --noEmit && vite build",
+    "test": "npm run test:bundle && vitest run",
+    "test:e2e": "playwright test",
+    "db:migrate": "wrangler d1 migrations apply DB --local",
+    "content:validate": "tsx scripts/content.ts",
+    "content:import": "tsx scripts/content.ts --import",
+    "deploy": "npm run build && wrangler deploy",
+    "test:unit": "vitest run tests/rules.test.ts",
+    "test:bundle": "wrangler deploy --dry-run --outdir .wrangler/test-bundle",
+    "local": "node scripts/local.mjs"
+  },
+  "dependencies": {
+    "@fontsource/dm-sans": "5.3.0",
+    "@fontsource/manrope": "5.3.0",
+    "better-auth": "1.7.13",
+    "dexie": "4.4.7",
+    "hono": "4.13.14",
+    "katex": "0.19.1",
+    "lucide-react": "1.61.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20261025.1",
+    "@playwright/test": "1.64.1",
+    "@types/katex": "0.16.8",
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "miniflare": "5.20261019.2-beta",
+    "prettier": "3.9.10",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vite": "8.3.5",
+    "vitest": "5.0.5",
+    "wrangler": "4.152.0"
+  }
+}

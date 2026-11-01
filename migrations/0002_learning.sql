@@ -1,0 +1,17 @@
+PRAGMA foreign_keys=ON;
+CREATE TABLE question_versions(id TEXT PRIMARY KEY,family TEXT NOT NULL,topic TEXT NOT NULL,skill TEXT NOT NULL,payload TEXT NOT NULL,pool TEXT NOT NULL CHECK(pool IN ('practice','assessment')),status TEXT NOT NULL CHECK(status IN ('published','quarantined')),reviewer TEXT NOT NULL,provenance TEXT NOT NULL,language TEXT NOT NULL,syllabus_version TEXT NOT NULL);
+CREATE INDEX question_topic ON question_versions(topic,pool,status);
+CREATE TABLE missions(id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES user(id),topic TEXT,status TEXT NOT NULL DEFAULT 'active',created_at INTEGER NOT NULL,finished_at INTEGER,request_id TEXT NOT NULL,UNIQUE(user_id,request_id));
+CREATE UNIQUE INDEX one_active_mission ON missions(user_id) WHERE status='active';
+CREATE TABLE mission_items(mission_id TEXT NOT NULL REFERENCES missions(id),position INTEGER NOT NULL,item_version TEXT NOT NULL REFERENCES question_versions(id),hinted INTEGER NOT NULL DEFAULT 0,PRIMARY KEY(mission_id,item_version),UNIQUE(mission_id,position));
+CREATE TABLE attempts(id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES user(id),mission_id TEXT NOT NULL REFERENCES missions(id),item_version TEXT NOT NULL REFERENCES question_versions(id),selected INTEGER NOT NULL,correct INTEGER NOT NULL,eligible INTEGER NOT NULL DEFAULT 0,received_at INTEGER NOT NULL,payload_hash TEXT NOT NULL,UNIQUE(mission_id,item_version));
+CREATE INDEX attempts_user_time ON attempts(user_id,received_at);
+CREATE INDEX attempts_mission ON attempts(mission_id);
+CREATE TABLE xp_ledger(user_id TEXT NOT NULL REFERENCES user(id),source_id TEXT NOT NULL,value INTEGER NOT NULL,day TEXT NOT NULL,PRIMARY KEY(user_id,source_id));
+CREATE TABLE groups(id TEXT PRIMARY KEY,name TEXT NOT NULL,owner_id TEXT NOT NULL REFERENCES user(id),invite_hash TEXT NOT NULL UNIQUE,expires_at INTEGER NOT NULL,created_at INTEGER NOT NULL);
+CREATE TABLE memberships(group_id TEXT NOT NULL REFERENCES groups(id),user_id TEXT NOT NULL REFERENCES user(id),PRIMARY KEY(group_id,user_id));
+CREATE INDEX members_user ON memberships(user_id,group_id);
+CREATE TABLE subscriptions(id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES user(id),provider_id TEXT UNIQUE,plan TEXT NOT NULL,status TEXT NOT NULL DEFAULT 'creating',paid_through INTEGER NOT NULL DEFAULT 0,created_at INTEGER NOT NULL);
+CREATE UNIQUE INDEX one_pending_subscription ON subscriptions(user_id) WHERE status IN ('creating','created','authenticated');
+CREATE TABLE payment_events(id TEXT PRIMARY KEY,payload_hash TEXT NOT NULL,event_type TEXT NOT NULL,status TEXT NOT NULL,received_at INTEGER NOT NULL);
+CREATE TABLE rate_limits(key TEXT PRIMARY KEY,count INTEGER NOT NULL,reset_at INTEGER NOT NULL);
