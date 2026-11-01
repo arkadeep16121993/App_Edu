@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.wrangler/
+.dev.vars
+.env*
+!.env.example
+playwright-report/
+test-results/
+*.local
+
+# Educator-reviewed banks remain private local inputs
+content/reviewed.json

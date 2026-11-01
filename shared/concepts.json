@@ -1,0 +1,300 @@
+[
+  {
+    "id": "coulomb-force",
+    "title": "Coulomb’s law",
+    "unit": "Electrostatics",
+    "idea": "The electric force between two point charges depends on their charges and the square of their separation.",
+    "formula": "F = k\\frac{|q_1q_2|}{r^2}",
+    "variables": "F is force in newtons; q₁ and q₂ are charges in coulombs; r is separation in metres. In vacuum k ≈ 9 × 10⁹ N m² C⁻².",
+    "steps": [
+      "Convert microcoulombs to coulombs: 1 μC = 10⁻⁶ C.",
+      "Square the distance in metres, then substitute into the formula.",
+      "The magnitude is positive. Like charges repel; opposite charges attract."
+    ],
+    "examplePrompt": "For 1 μC and 2 μC separated by 0.20 m in vacuum:",
+    "exampleSteps": [
+      "F = (9 × 10⁹)(1 × 10⁻⁶)(2 × 10⁻⁶)/(0.20)².",
+      "F = 0.018/0.04 = 0.45 N."
+    ],
+    "pitfall": "Use metres and coulombs before calculating."
+  },
+  {
+    "id": "inverse-square",
+    "title": "Inverse-square scaling",
+    "unit": "Electrostatics",
+    "idea": "With both charges and the medium fixed, spreading the separation reduces force by the square of that change.",
+    "formula": "\\frac{F_2}{F_1}=\\left(\\frac{r_1}{r_2}\\right)^2",
+    "variables": "r₁ and r₂ are the original and new separations. This relation assumes point charges, or a valid point-charge approximation.",
+    "steps": [
+      "Write the distance multiplier first: r₂ = a × r₁.",
+      "Square that multiplier: the new force is F₁/a².",
+      "A larger separation gives a smaller force. No differentiation is needed."
+    ],
+    "examplePrompt": "The separation doubles while both charges stay unchanged.",
+    "exampleSteps": [
+      "r₂ = 2r₁, so F₂/F₁ = (1/2)².",
+      "F₂ = F₁/4. Halving the separation instead gives 4F₁."
+    ],
+    "pitfall": "An inverse-square law is different from an inverse-distance law."
+  },
+  {
+    "id": "charge-quantisation",
+    "title": "Quantisation of charge",
+    "unit": "Electrostatics",
+    "idea": "A body’s net charge comes in whole-number multiples of the elementary charge.",
+    "formula": "Q=ne,\\qquad e=1.6\\times10^{-19}\\,\\mathrm{C}",
+    "variables": "Use the magnitude of Q to find the number of excess or missing electrons. The sign tells you which.",
+    "steps": [
+      "Calculate n = |Q|/e.",
+      "A negative charge means excess electrons.",
+      "A positive charge means electrons are missing."
+    ],
+    "examplePrompt": "A body has a net charge of −4.8 × 10⁻¹⁹ C.",
+    "exampleSteps": [
+      "n = 4.8/1.6 = 3.",
+      "It has three excess electrons relative to its neutral state."
+    ],
+    "pitfall": "Do not treat a negative net charge as a loss of electrons."
+  },
+  {
+    "id": "field-superposition",
+    "title": "Adding electric fields",
+    "unit": "Electrostatics",
+    "idea": "The net electric field is the vector sum of the fields from each source charge.",
+    "formula": "\\vec E_{\\mathrm{net}}=\\vec E_1+\\vec E_2",
+    "variables": "An electric field points away from a positive source charge and toward a negative one.",
+    "steps": [
+      "Draw each field direction at the observation point.",
+      "Find the magnitudes using the distances to that point.",
+      "Add the signed components; equal opposite fields cancel."
+    ],
+    "examplePrompt": "Two identical positive charges are equally far from their midpoint.",
+    "exampleSteps": [
+      "At the midpoint, the left charge produces a field to the right.",
+      "The right charge produces an equally strong field to the left. The net field is zero."
+    ],
+    "pitfall": "Magnitudes alone do not determine a vector sum."
+  },
+  {
+    "id": "charge-conservation",
+    "title": "Conservation of charge",
+    "unit": "Electrostatics",
+    "idea": "In an isolated system, charge can move between bodies but the total remains unchanged.",
+    "formula": "Q_{\\mathrm{before}}=Q_{\\mathrm{after}}",
+    "variables": "Isolation means there is no transfer of charge to or from the surroundings.",
+    "steps": [
+      "Add the initial charges algebraically, keeping their signs.",
+      "Touching may redistribute charge.",
+      "Report the total separately from the charge on an individual object."
+    ],
+    "examplePrompt": "Two isolated conductors initially have +7 μC and −3 μC.",
+    "exampleSteps": [
+      "Their initial total is +4 μC.",
+      "Their total after touching and separation is still +4 μC."
+    ],
+    "pitfall": "Equal sharing requires extra symmetry conditions; conservation does not."
+  },
+  {
+    "id": "dielectric-force",
+    "title": "Force in a dielectric",
+    "unit": "Electrostatics",
+    "idea": "For fixed free point charges in a uniform dielectric, a higher permittivity reduces their electrostatic force.",
+    "formula": "F_{\\mathrm{medium}}=\\frac{F_{\\mathrm{vacuum}}}{\\varepsilon_r}",
+    "variables": "εr is the medium’s relative permittivity. Hold the free charges and separation fixed for this comparison.",
+    "steps": [
+      "Find the relative permittivity.",
+      "Divide the vacuum force by that value.",
+      "Keep the original attraction or repulsion direction."
+    ],
+    "examplePrompt": "A vacuum force is 0.8 N; the relative permittivity is 4.",
+    "exampleSteps": ["Fmedium = 0.8/4.", "The new force magnitude is 0.2 N."],
+    "pitfall": "The force is divided by relative permittivity, not multiplied."
+  },
+  {
+    "id": "ohms-law",
+    "title": "Ohm’s law",
+    "unit": "Current Electricity",
+    "idea": "For an ohmic conductor at unchanged physical conditions, current is proportional to the applied voltage.",
+    "formula": "V=IR,\\qquad I=\\frac{V}{R}",
+    "variables": "V is voltage in volts, I is current in amperes and R is resistance in ohms. Keep temperature and other physical conditions fixed.",
+    "steps": [
+      "Identify which of V, I and R is unknown.",
+      "Rearrange the equation before substituting.",
+      "For a ratio comparison at fixed R, I₂/I₁ = V₂/V₁."
+    ],
+    "examplePrompt": "An 8 Ω resistor is across 16 V. The voltage later doubles.",
+    "exampleSteps": [
+      "Initially I = 16/8 = 2 A.",
+      "At unchanged resistance, doubling voltage doubles the current to 4 A."
+    ],
+    "pitfall": "Do not reverse V/R, and check that resistance is unchanged."
+  },
+  {
+    "id": "parallel-resistance",
+    "title": "Resistors in parallel",
+    "unit": "Current Electricity",
+    "idea": "Parallel resistors share a voltage. Their branch currents add, so their equivalent resistance is smaller than the smallest branch resistance.",
+    "formula": "\\frac{1}{R_{\\mathrm{eq}}}=\\frac{1}{R_1}+\\frac{1}{R_2}",
+    "variables": "Use reciprocal addition for parallel resistors. For two branches, Req = R₁R₂/(R₁ + R₂).",
+    "steps": [
+      "Confirm that both ends of each resistor share the same two nodes.",
+      "Add reciprocals, or use the two-resistor product-over-sum formula.",
+      "Take the reciprocal to recover resistance."
+    ],
+    "examplePrompt": "4 Ω and 12 Ω are in parallel.",
+    "exampleSteps": [
+      "Req = (4 × 12)/(4 + 12) = 48/16.",
+      "Req = 3 Ω, smaller than 4 Ω."
+    ],
+    "pitfall": "Adding resistances directly is the series rule, not the parallel rule."
+  },
+  {
+    "id": "joule-power",
+    "title": "Electrical power in a resistor",
+    "unit": "Current Electricity",
+    "idea": "Electrical power is the rate of energy transfer. Choose the equivalent power formula that matches the quantities supplied.",
+    "formula": "P=VI=I^2R=\\frac{V^2}{R}",
+    "variables": "P is in watts. The resistor forms use V = IR.",
+    "steps": [
+      "If I and R are given, use I²R.",
+      "If V and R are given, use V²/R.",
+      "Square the appropriate quantity before multiplying or dividing."
+    ],
+    "examplePrompt": "A 5 Ω resistor carries 2 A.",
+    "exampleSteps": ["P = 2² × 5.", "P = 20 W."],
+    "pitfall": "IR is a voltage; it is not the power."
+  },
+  {
+    "id": "wire-resistance",
+    "title": "Resistance and wire geometry",
+    "unit": "Current Electricity",
+    "idea": "For a uniform wire of unchanged material and temperature, resistance increases with length and decreases with cross-sectional area.",
+    "formula": "R=\\rho\\frac{L}{A}",
+    "variables": "ρ is resistivity, L is length and A is area, not radius.",
+    "steps": [
+      "Write each change as a multiplier.",
+      "Form the ratio R₂/R₁ = (ρ₂/ρ₁)(L₂/L₁)(A₁/A₂).",
+      "If radius changes, convert it into an area change using A = πr²."
+    ],
+    "examplePrompt": "Length triples and area doubles at fixed resistivity.",
+    "exampleSteps": [
+      "R₂/R₁ = 3/2.",
+      "The new resistance is 1.5 times the original."
+    ],
+    "pitfall": "Account for both geometry changes; area and radius are different."
+  },
+  {
+    "id": "ideal-voltmeter",
+    "title": "The ideal voltmeter",
+    "unit": "Current Electricity",
+    "idea": "A voltmeter measures the potential difference between two points without drawing current in the ideal limit.",
+    "formula": "I_{\\mathrm{meter}}=\\frac{V}{R_{\\mathrm{meter}}}\\to0",
+    "variables": "An ideal voltmeter has infinite resistance and is connected in parallel across the element.",
+    "steps": [
+      "Choose the two measurement points.",
+      "Connect the voltmeter across them, not in series.",
+      "Infinite resistance makes its branch current zero."
+    ],
+    "examplePrompt": "A meter is placed across a resistor in a working circuit.",
+    "exampleSteps": [
+      "To leave the branch current unchanged, the meter should draw no extra current.",
+      "That corresponds to the ideal infinite-resistance limit."
+    ],
+    "pitfall": "An ideal ammeter has the opposite resistance requirement: zero."
+  },
+  {
+    "id": "thin-lens",
+    "title": "The thin-lens equation",
+    "unit": "Ray Optics",
+    "idea": "A thin lens links object distance, image distance and focal length. Consistent signs are as important as substitution.",
+    "formula": "\\frac{1}{v}-\\frac{1}{u}=\\frac{1}{f}",
+    "variables": "With light travelling left to right, measure distances from the optical centre. A real object on the left has u < 0; a convex lens in air has f > 0.",
+    "steps": [
+      "State the sign convention.",
+      "Substitute signed u and f, then solve for v.",
+      "A positive v is on the outgoing-light side in this convention."
+    ],
+    "examplePrompt": "A convex lens has f = +10 cm and u = −20 cm.",
+    "exampleSteps": [
+      "1/v + 1/20 = 1/10.",
+      "1/v = 1/20, so v = +20 cm: a real image on the other side."
+    ],
+    "pitfall": "Do not change the convention partway through the calculation."
+  },
+  {
+    "id": "lens-power",
+    "title": "Lens power and combinations",
+    "unit": "Ray Optics",
+    "idea": "Optical power is the reciprocal of focal length in metres. For thin lenses in contact, add their signed powers.",
+    "formula": "P=\\frac{1}{f\\,(\\mathrm{m})},\\qquad P_{\\mathrm{total}}=P_1+P_2",
+    "variables": "Power is in dioptres (D). A converging lens has positive power; a diverging lens has negative power in air.",
+    "steps": [
+      "Convert centimetres to metres before taking a reciprocal.",
+      "Keep the sign of each focal length or power.",
+      "For thin lenses in contact, add powers rather than focal lengths."
+    ],
+    "examplePrompt": "A +4 D lens and a −1 D lens are in contact.",
+    "exampleSteps": [
+      "Their total power is +4 + (−1) = +3 D.",
+      "The combined focal length is 1/3 m, approximately +33 cm."
+    ],
+    "pitfall": "A centimetre-to-metre error changes the numerical power by a factor of 100."
+  },
+  {
+    "id": "focal-rays",
+    "title": "An object at the focus",
+    "unit": "Ray Optics",
+    "idea": "For an ideal thin convex lens, light from an axial object at the front focal point emerges parallel.",
+    "formula": "u=-f\\quad\\Rightarrow\\quad\\frac{1}{v}=0",
+    "variables": "An image at infinity means the emerging rays are parallel; they do not meet at a finite image distance.",
+    "steps": [
+      "Place the object at the front principal focus.",
+      "Trace two rays through the lens, or substitute u = −f.",
+      "The outgoing rays are parallel in the ideal paraxial model."
+    ],
+    "examplePrompt": "A small object is at the front focus of a convex lens.",
+    "exampleSteps": [
+      "The lens equation gives 1/v = 0.",
+      "Its image is at infinity, represented by parallel emerging rays."
+    ],
+    "pitfall": "Infinity here is an image location, not infinite brightness or lens power."
+  },
+  {
+    "id": "diverging-lens",
+    "title": "Images from a concave lens",
+    "unit": "Ray Optics",
+    "idea": "A concave lens in air diverges light. For a real object, backward extensions of the outgoing rays form a virtual, erect, diminished image.",
+    "formula": "f<0,\\qquad 0<m<1",
+    "variables": "This statement is for a single thin concave lens in air with a real object. Different incoming beams can change the situation.",
+    "steps": [
+      "Trace an axial ray and a ray parallel to the axis.",
+      "Extend the refracted rays backward to find their apparent meeting point.",
+      "The apparent image is upright and smaller than the real object."
+    ],
+    "examplePrompt": "A real object is moved closer to a concave lens.",
+    "exampleSteps": [
+      "The lens still produces a virtual, erect, diminished image under these conditions.",
+      "The image position and size change, but this image type does not."
+    ],
+    "pitfall": "Do not transfer the convex-lens real-image rule to a diverging lens."
+  },
+  {
+    "id": "magnification",
+    "title": "Signed magnification",
+    "unit": "Ray Optics",
+    "idea": "The magnitude of magnification describes size; its sign describes whether the image is erect or inverted.",
+    "formula": "m=\\frac{h_i}{h_o}=\\frac{v}{u}",
+    "variables": "For a single thin lens in the Cartesian convention, negative m means inversion. |m| > 1 means enlarged; |m| < 1 means diminished.",
+    "steps": [
+      "Identify whether the image is erect or inverted.",
+      "Write the absolute size ratio.",
+      "Apply the orientation sign separately."
+    ],
+    "examplePrompt": "A lens makes an inverted image three times the object height.",
+    "exampleSteps": [
+      "The size ratio has magnitude 3.",
+      "Inversion gives the minus sign: m = −3."
+    ],
+    "pitfall": "Do not use a positive sign for an inverted image just because its size is larger."
+  }
+]

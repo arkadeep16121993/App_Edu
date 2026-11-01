@@ -1,0 +1,374 @@
+[
+  {
+    "id": "demo-01-v1",
+    "family": "demo-01",
+    "topic": "1-1",
+    "skill": "1-1",
+    "stem": "Two point charges, +2 μC and +3 μC, are placed 30 cm apart in vacuum. What is the magnitude of the force between them?",
+    "options": ["0.2 N", "0.6 N", "1.8 N", "6 N"],
+    "answer": 1,
+    "hints": ["Use Coulomb’s law with the distance in metres."],
+    "solution": "F = kq₁q₂/r² = (9 × 10⁹)(2 × 10⁻⁶)(3 × 10⁻⁶)/(0.30)² = 0.6 N. The force is repulsive.",
+    "error": "Convert both microcoulombs to coulombs and square the distance.",
+    "formula": "F = k \\frac{q_1 q_2}{r^2}",
+    "conceptId": "coulomb-force",
+    "questionType": "Coulomb-force calculation",
+    "misconceptions": {
+      "0": "Check charge conversion and the squared separation.",
+      "2": "Check the powers of ten and square the distance in metres.",
+      "3": "Check microcoulomb conversion before substituting."
+    }
+  },
+  {
+    "id": "demo-02-v1",
+    "family": "demo-02",
+    "topic": "1-1",
+    "skill": "1-1",
+    "stem": "The distance between two point charges is doubled. Their electrostatic force becomes:",
+    "options": [
+      "Twice as large",
+      "Four times as large",
+      "Half as large",
+      "One quarter as large"
+    ],
+    "answer": 3,
+    "hints": ["Which power of distance appears in Coulomb’s law?"],
+    "solution": "F ∝ 1/r². Replacing r with 2r gives F′ = F/4.",
+    "error": "The force follows an inverse-square relation, not an inverse relation.",
+    "conceptId": "inverse-square",
+    "questionType": "Inverse-square scaling",
+    "misconceptions": {
+      "0": "You may have treated force as directly proportional to distance.",
+      "1": "You may have squared the distance multiplier without taking its reciprocal.",
+      "2": "You may have used inverse-distance scaling instead of inverse-square scaling."
+    }
+  },
+  {
+    "id": "demo-03-v1",
+    "family": "demo-03",
+    "topic": "1-1",
+    "skill": "1-1",
+    "stem": "A body has a charge of −3.2 × 10⁻¹⁹ C. Relative to its neutral state, it has:",
+    "options": [
+      "Lost 2 electrons",
+      "Gained 2 electrons",
+      "Gained 3 electrons",
+      "Lost 3 electrons"
+    ],
+    "answer": 1,
+    "hints": ["An electron carries −1.6 × 10⁻¹⁹ C."],
+    "solution": "n = |Q|/e = 3.2/1.6 = 2. Negative charge means two excess electrons.",
+    "error": "Negative charge indicates an excess of electrons.",
+    "conceptId": "charge-quantisation",
+    "questionType": "Counting excess electrons",
+    "misconceptions": {
+      "0": "The electron count may be right, but a negative body has gained electrons.",
+      "2": "Check the ratio |Q|/e for the number of electrons.",
+      "3": "Check both the electron count and the sign of the net charge."
+    }
+  },
+  {
+    "id": "demo-04-v1",
+    "family": "demo-04",
+    "topic": "1-1",
+    "skill": "1-1",
+    "stem": "Two equal positive point charges are fixed at x = −a and x = +a. The net electric field at the origin is:",
+    "options": ["Zero", "Along +x", "Along −x", "Infinite"],
+    "answer": 0,
+    "hints": ["Draw the direction of the field from each positive charge."],
+    "solution": "The fields have equal magnitudes and opposite directions at the midpoint, so their vector sum is zero.",
+    "error": "Add electric fields as vectors, not magnitudes.",
+    "conceptId": "field-superposition",
+    "questionType": "Electric-field vector cancellation",
+    "misconceptions": {
+      "1": "Include the equal field pointing in the opposite direction.",
+      "2": "Include the equal field pointing in the opposite direction.",
+      "3": "Neither source charge is at the midpoint, so each field is finite."
+    }
+  },
+  {
+    "id": "demo-05-v1",
+    "family": "demo-05",
+    "topic": "1-1",
+    "skill": "1-1",
+    "stem": "Two isolated conducting spheres carry +6 μC and −2 μC. They are touched and separated. What is their total charge afterward?",
+    "options": ["+2 μC", "+8 μC", "+4 μC", "Zero"],
+    "answer": 2,
+    "hints": ["Total charge is conserved in an isolated system."],
+    "solution": "Qtotal = +6 − 2 = +4 μC. Touching redistributes charge but does not change its total.",
+    "error": "Do not confuse the total charge with the charge on one sphere.",
+    "conceptId": "charge-conservation",
+    "questionType": "Conserving total signed charge",
+    "misconceptions": {
+      "0": "You may be reporting a possible individual charge instead of the total.",
+      "1": "Keep the negative sign when adding the initial charges.",
+      "3": "Opposite signs do not cancel completely when magnitudes differ."
+    }
+  },
+  {
+    "id": "demo-06-v1",
+    "family": "demo-06",
+    "topic": "1-1",
+    "skill": "1-1",
+    "stem": "Two charges exert force F in vacuum. In a uniform dielectric of relative permittivity 4, at the same separation, the force is:",
+    "options": ["4F", "F/4", "F/2", "16F"],
+    "answer": 1,
+    "hints": ["The permittivity appears in the denominator of Coulomb’s law."],
+    "solution": "In the given uniform medium, Fmedium = Fvacuum/εr = F/4.",
+    "error": "A dielectric reduces the force for fixed free charges.",
+    "conceptId": "dielectric-force",
+    "questionType": "Changing the surrounding medium",
+    "misconceptions": {
+      "0": "Relative permittivity divides the vacuum force rather than multiplying it.",
+      "2": "Use the supplied relative permittivity, not its square root.",
+      "3": "The dielectric factor is not squared in this force comparison."
+    }
+  },
+  {
+    "id": "demo-07-v1",
+    "family": "demo-07",
+    "topic": "2-3",
+    "skill": "2-3",
+    "stem": "A 6 Ω resistor is connected across an ideal 12 V battery. What current flows?",
+    "options": ["0.5 A", "2 A", "6 A", "72 A"],
+    "answer": 1,
+    "hints": ["Use the voltage-current-resistance relation."],
+    "solution": "I = V/R = 12/6 = 2 A.",
+    "error": "Divide voltage by resistance, not resistance by voltage.",
+    "formula": "V = IR",
+    "conceptId": "ohms-law",
+    "questionType": "Calculating current from voltage",
+    "misconceptions": {
+      "0": "You may have reversed the voltage-to-resistance ratio.",
+      "2": "Use both voltage and resistance in I = V/R.",
+      "3": "Multiplying V and R does not give the current."
+    }
+  },
+  {
+    "id": "demo-08-v1",
+    "family": "demo-08",
+    "topic": "2-3",
+    "skill": "2-3",
+    "stem": "Two resistors, 3 Ω and 6 Ω, are connected in parallel. Their equivalent resistance is:",
+    "options": ["9 Ω", "3 Ω", "2 Ω", "18 Ω"],
+    "answer": 2,
+    "hints": ["Add reciprocals for a parallel connection."],
+    "solution": "1/R = 1/3 + 1/6 = 1/2, so R = 2 Ω.",
+    "error": "Parallel resistance is smaller than either individual resistor.",
+    "conceptId": "parallel-resistance",
+    "questionType": "Combining parallel resistors",
+    "misconceptions": {
+      "0": "Adding the resistances is the series rule.",
+      "1": "Both parallel branches affect the equivalent resistance.",
+      "3": "The product must also be divided by the sum."
+    }
+  },
+  {
+    "id": "demo-09-v1",
+    "family": "demo-09",
+    "topic": "2-3",
+    "skill": "2-3",
+    "stem": "A wire obeys Ohm’s law at constant temperature. If its potential difference triples, its current:",
+    "options": ["Triples", "Halves", "Stays the same", "Increases ninefold"],
+    "answer": 0,
+    "hints": ["Keep the resistance constant in I = V/R."],
+    "solution": "With R constant, current is directly proportional to voltage. Tripling V triples I.",
+    "error": "Ohm’s law assumes unchanged physical conditions.",
+    "conceptId": "ohms-law",
+    "questionType": "Current-voltage proportionality",
+    "misconceptions": {
+      "1": "At fixed resistance, increasing voltage increases current.",
+      "2": "The resistance stays fixed, but current changes with voltage.",
+      "3": "Current is linear in voltage here, not quadratic."
+    }
+  },
+  {
+    "id": "demo-10-v1",
+    "family": "demo-10",
+    "topic": "2-3",
+    "skill": "2-3",
+    "stem": "A 4 Ω resistor carries 3 A. What power is dissipated?",
+    "options": ["12 W", "36 W", "48 W", "9 W"],
+    "answer": 1,
+    "hints": ["The current is given, so use P = I²R."],
+    "solution": "P = 3² × 4 = 36 W.",
+    "error": "Square the current before multiplying by resistance.",
+    "conceptId": "joule-power",
+    "questionType": "Choosing and applying a power formula",
+    "misconceptions": {
+      "0": "IR gives voltage; power requires I²R when current is given.",
+      "2": "Check that the current, not the resistance, is squared.",
+      "3": "After squaring the current, multiply by resistance."
+    }
+  },
+  {
+    "id": "demo-11-v1",
+    "family": "demo-11",
+    "topic": "2-3",
+    "skill": "2-3",
+    "stem": "A uniform wire has resistance R. Its length and cross-sectional area are both doubled, with unchanged resistivity. The new resistance is:",
+    "options": ["2R", "R/2", "R", "4R"],
+    "answer": 2,
+    "hints": ["Use R = ρL/A."],
+    "solution": "R′ = ρ(2L)/(2A) = ρL/A = R.",
+    "error": "Account for both changes together.",
+    "conceptId": "wire-resistance",
+    "questionType": "Combining length and area changes",
+    "misconceptions": {
+      "0": "The doubled area must be included as well as the doubled length.",
+      "1": "The doubled length must be included as well as the doubled area.",
+      "3": "Area appears in the denominator, not as a second multiplier."
+    }
+  },
+  {
+    "id": "demo-12-v1",
+    "family": "demo-12",
+    "topic": "2-3",
+    "skill": "2-3",
+    "stem": "An ideal voltmeter is connected across a resistor. Its resistance should ideally be:",
+    "options": ["Zero", "Equal to the resistor", "1 Ω", "Infinite"],
+    "answer": 3,
+    "hints": ["A voltmeter should draw no current from the measured branch."],
+    "solution": "Infinite resistance makes the ideal voltmeter current zero, leaving the circuit undisturbed.",
+    "error": "A low-resistance meter would change the circuit.",
+    "conceptId": "ideal-voltmeter",
+    "questionType": "Choosing a meter resistance",
+    "misconceptions": {
+      "0": "Zero resistance is the ideal ammeter condition, not the voltmeter condition.",
+      "1": "A finite meter resistance would draw current and load the circuit.",
+      "2": "A low finite resistance would draw current and alter the measurement."
+    }
+  },
+  {
+    "id": "demo-13-v1",
+    "family": "demo-13",
+    "topic": "3-6",
+    "skill": "3-6",
+    "stem": "An object is placed 30 cm in front of a convex lens of focal length 15 cm. Where is the real image?",
+    "options": [
+      "15 cm behind the lens",
+      "30 cm behind the lens",
+      "At infinity",
+      "30 cm in front of the lens"
+    ],
+    "answer": 1,
+    "hints": ["Apply the lens equation with u = −30 cm and f = +15 cm."],
+    "solution": "1/v − 1/u = 1/f. Thus 1/v + 1/30 = 1/15, giving v = +30 cm.",
+    "error": "Use the Cartesian sign convention consistently.",
+    "formula": "\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f}",
+    "conceptId": "thin-lens",
+    "questionType": "Solving the signed lens equation",
+    "misconceptions": {
+      "0": "An object at twice the focal length images at twice the focal length.",
+      "2": "The object is at 2f, not at the focal point.",
+      "3": "Use the image-distance sign: this real image is on the opposite side."
+    }
+  },
+  {
+    "id": "demo-14-v1",
+    "family": "demo-14",
+    "topic": "3-6",
+    "skill": "3-6",
+    "stem": "What is the power of a convex lens of focal length 50 cm in air?",
+    "options": ["+0.5 D", "−2 D", "+2 D", "+50 D"],
+    "answer": 2,
+    "hints": ["Convert the focal length to metres."],
+    "solution": "P = 1/f = 1/0.50 = +2 D. A convex lens has positive power.",
+    "error": "Use metres when calculating power in dioptres.",
+    "conceptId": "lens-power",
+    "questionType": "Converting focal length to power",
+    "misconceptions": {
+      "0": "Take the reciprocal after converting 50 cm to 0.50 m.",
+      "1": "A convex lens in air has positive power.",
+      "3": "Power is a reciprocal in metres, not the focal length in centimetres."
+    }
+  },
+  {
+    "id": "demo-15-v1",
+    "family": "demo-15",
+    "topic": "3-6",
+    "skill": "3-6",
+    "stem": "An object is at the principal focus of an ideal convex lens. The emerging rays are:",
+    "options": [
+      "Parallel",
+      "Converging at 2f",
+      "Diverging from f",
+      "Reflected backward"
+    ],
+    "answer": 0,
+    "hints": [
+      "Recall the path of a ray passing through the front focal point."
+    ],
+    "solution": "Rays from an axial object at the focal point emerge parallel; the image is at infinity.",
+    "error": "An image at infinity corresponds to parallel emerging rays.",
+    "conceptId": "focal-rays",
+    "questionType": "Tracing rays from the focal point",
+    "misconceptions": {
+      "1": "Finite convergence at 2f applies to a different object position.",
+      "2": "A convex lens with the object at its front focus produces parallel outgoing rays.",
+      "3": "The lens refracts the rays; it is not acting as a mirror."
+    }
+  },
+  {
+    "id": "demo-16-v1",
+    "family": "demo-16",
+    "topic": "3-6",
+    "skill": "3-6",
+    "stem": "A concave lens in air always forms, for a real object, an image that is:",
+    "options": [
+      "Real and inverted",
+      "Virtual, erect and diminished",
+      "Virtual and enlarged",
+      "Real and enlarged"
+    ],
+    "answer": 1,
+    "hints": ["A concave lens is a diverging lens."],
+    "solution": "For a real object, the rays diverge after refraction. Their backward extensions meet to form a virtual, erect, diminished image.",
+    "error": "Distinguish the behavior of converging and diverging lenses.",
+    "conceptId": "diverging-lens",
+    "questionType": "Identifying a concave-lens image",
+    "misconceptions": {
+      "0": "A real object at a concave lens in air produces a virtual image.",
+      "2": "The virtual image is diminished under these conditions.",
+      "3": "Check both image reality and relative size for a diverging lens."
+    }
+  },
+  {
+    "id": "demo-17-v1",
+    "family": "demo-17",
+    "topic": "3-6",
+    "skill": "3-6",
+    "stem": "Two thin lenses of powers +5 D and −2 D are placed in contact. Their combined power is:",
+    "options": ["−10 D", "+7 D", "+3 D", "−3 D"],
+    "answer": 2,
+    "hints": ["For thin lenses in contact, powers add algebraically."],
+    "solution": "Ptotal = +5 + (−2) = +3 D.",
+    "error": "Keep the sign of each lens power.",
+    "conceptId": "lens-power",
+    "questionType": "Adding signed lens powers",
+    "misconceptions": {
+      "0": "For thin lenses in contact, add powers instead of multiplying.",
+      "1": "Keep the negative sign of the diverging lens.",
+      "3": "Add the two signed powers: +5 + (−2)."
+    }
+  },
+  {
+    "id": "demo-18-v1",
+    "family": "demo-18",
+    "topic": "3-6",
+    "skill": "3-6",
+    "stem": "A convex lens forms a real image twice the size of an object. The transverse magnification is:",
+    "options": ["+2", "−2", "+0.5", "−0.5"],
+    "answer": 1,
+    "hints": ["A real image from one convex lens is inverted."],
+    "solution": "The magnitude of magnification is 2. Inversion gives a negative sign, so m = −2.",
+    "error": "The sign describes orientation; the magnitude describes size.",
+    "conceptId": "magnification",
+    "questionType": "Interpreting magnification sign and size",
+    "misconceptions": {
+      "0": "An inverted image needs a negative magnification sign.",
+      "2": "The image is twice as large, not half as large, and it is inverted.",
+      "3": "The negative sign is appropriate; check the absolute size ratio."
+    }
+  }
+]
