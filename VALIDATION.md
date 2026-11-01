@@ -28,3 +28,13 @@ A self-contained HTML guest preview is also packaged. Practice, reload/resume an
 ## 1 November 2026 — audience, pathway and roadmap
 
 The homepage now identifies NEET-UG Physics and Class 11, Class 12 and repeat aspirants. It includes a four-step preparation path, an actionable topic link, and separate available/planned feature panels. The production build and all five existing browser journeys passed. Direct checks verified the topic and planned-plan navigation and a 360px layout without horizontal overflow; desktop/mobile screenshots were refreshed. Adaptive diagnosis, concept lessons, drill branching and mocks remain a design proposal in `docs/learning-loop-proposal.md`, updated with the user's preference for self-paced topic coaching and honest peer benchmarks.
+
+## Concept feedback, rule-based analysis and sample ranking
+
+Implemented links after both correct and incorrect answers to 16 concept notes covering all 18 starter items. Lessons include the governing idea, formula, assumptions, steps, a worked example and common pitfall; inverse-square scaling includes a visual comparison. Device-local concept bookmarks appear in My progress. Lessons and starter content still await educator review.
+
+Mission results now group first answers by specific question type, show wrong/total and hinted counts, explain possible option-specific mistakes, link back to concepts and support targeted revision. Completed results reopen from practice history. Suggestions remain provisional; no readiness or NEET percentile is inferred from demo or repeated practice.
+
+Added a labelled sample leaderboard with eight fictional comparison entries, the learner's mission score, +4/−1 scoring and shared ranks for ties. This does not call a ranking service or imply actual peers. No AI service is called.
+
+The production build, 17 unit/D1 integration tests, and six Chromium browser journeys passed. Browser checks covered lessons after right/wrong answers, focus restoration, bookmark persistence, mission resume, specific inverse-square error analysis, result reopening, targeted revision, tied mock ranks and the 360px result layout. The standalone HTML bundle also passed a complete six-question journey with concept reading/saving, analysis and ranking, zero external asset requests and zero JavaScript exceptions. Direct Mac file-origin testing remains unverified because the managed Chromium blocks file URLs.

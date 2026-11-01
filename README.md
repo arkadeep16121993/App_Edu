@@ -32,6 +32,9 @@ Tests build their own isolated D1 database and synthetic signed sessions. They n
 
 - Responsive Practice dashboard, searchable 30-topic catalogue, practice history, Study circle and plan screens.
 - 18 original starter questions across Electrostatics, Current Electricity and Ray Optics; six-question missions, deliberate selection/check actions, staged hints, explanations, mistake revision and one-tap resume.
+- Linked concept lessons for all starter items, with 16 concept notes, worked examples, an inverse-square visual and a device-local saved reading list. Lessons remain development content awaiting educator review.
+- Rule-based end-of-mission analysis by specific question type and selected distractor; targeted question revision and results that can be reopened from history. No AI calls or verified weakness diagnosis.
+- A clearly labelled sample leaderboard: the learner’s mission score alongside eight fictional comparison entries, using +4/−1 scoring and shared ranks for ties. This is not live peer ranking or a NEET percentile.
 - Guest history in IndexedDB; installable web manifest and production service worker; previously visited app assets and starter practice work offline. A first visit still needs connectivity, and browser storage is not a durable backup.
 - Better Auth native D1 integration, Google OAuth configuration, signed cookie sessions, protected API routes, origin checks, bounded input, database rate limiting and invitation-only groups.
 - Server-created six-item practice missions from a private reviewed bank, key-free question payloads, canonical grading, immutable first answers, conflict checks, safe retries and one mission completion XP award within a UTC daily cap.

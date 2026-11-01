@@ -130,6 +130,15 @@ describe("D1-backed Worker", () => {
     expect(
       (await request(`/api/v1/missions/${m.id}/finish`, "alice", {})).status,
     ).toBe(409);
+    const resumed = (await (
+      await request("/api/v1/missions/next", "alice", {
+        topic_id: "1-1",
+        client_request_id: crypto.randomUUID(),
+      })
+    ).json()) as any;
+    expect(resumed.attempts[0].error_reason).toBeTruthy();
+    expect(resumed.attempts[0]).not.toHaveProperty("payload");
+    expect(resumed.questions[0]).not.toHaveProperty("misconceptions");
     for (const q of m.questions.slice(1))
       expect(
         (

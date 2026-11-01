@@ -318,4 +318,40 @@ test("concept lessons, specific mistake analysis and sample ranking work from an
     page.getByRole("dialog", { name: "Inverse-square scaling" }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Back to my practice" }).click();
+  await page.getByRole("button", { name: "View results", exact: true }).click();
+  const savedResult = page
+    .locator(".pattern-card")
+    .filter({
+      has: page.getByRole("heading", {
+        name: "Inverse-square scaling",
+        exact: true,
+      }),
+    });
+  await savedResult
+    .getByRole("button", { name: "Revisit these questions" })
+    .click();
+  await expect(page.getByText("Question 1 of 1")).toBeVisible();
+  await expect(
+    page.getByRole("heading", {
+      name: "The distance between two point charges is doubled. Their electrostatic force becomes:",
+    }),
+  ).toBeVisible();
+  await page.locator(".option").nth(3).click();
+  await page.getByRole("button", { name: "Check answer", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Finish mission", exact: true })
+    .click();
+  await expect(page.locator(".insights-positive")).toContainText(
+    "No missed or hinted answers",
+  );
+  await page.setViewportSize({ width: 360, height: 800 });
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  await page.screenshot({
+    path: "test-results/concept-result-mobile.png",
+    fullPage: true,
+  });
 });

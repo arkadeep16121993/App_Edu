@@ -1,6 +1,6 @@
 # Proposed learning loop: quiz → understand → drill → check again
 
-Status: product proposal for discussion, not implemented features. The clearer NEET audience message, four-step pathway and available/planned feature sections have been implemented separately. This proposal describes the next learning changes; it does not expand current readiness or payment claims.
+Status: product proposal with partial implementation. Concept links/notes, device-local saved concepts, rule-based mission analysis and explicitly fictional sample ranking are now implemented. Learner-stage onboarding, adaptive drill selection, delayed evidence projections and timed mocks remain proposed. The clearer NEET audience message, four-step pathway and available/planned feature sections have been implemented separately. This proposal describes the next learning changes; it does not expand current readiness or payment claims.
 
 ## Audience and first visit
 

@@ -140,7 +140,7 @@ async function missionPayload(db: D1Database, id: string) {
     .all<{ payload: string; position: number; hinted: number }>();
   const attempts = await db
     .prepare(
-      "SELECT a.id,a.item_version,a.selected,a.correct,i.hinted FROM attempts a JOIN mission_items i ON i.mission_id=a.mission_id AND i.item_version=a.item_version WHERE a.mission_id=? ORDER BY a.received_at",
+      "SELECT a.id,a.item_version,a.selected,a.correct,i.hinted,q.payload FROM attempts a JOIN mission_items i ON i.mission_id=a.mission_id AND i.item_version=a.item_version JOIN question_versions q ON q.id=a.item_version WHERE a.mission_id=? ORDER BY a.received_at",
     )
     .bind(id)
     .all();
@@ -150,7 +150,15 @@ async function missionPayload(db: D1Database, id: string) {
       ...safeQuestion(JSON.parse(i.payload) as Question),
       hinted: !!i.hinted,
     })),
-    attempts: attempts.results,
+    attempts: attempts.results.map(({ payload, ...attempt }) => ({
+      ...attempt,
+      error_reason: attempt.correct
+        ? null
+        : possibleError(
+            JSON.parse(payload as string) as Question,
+            attempt.selected as number,
+          ),
+    })),
   };
 }
 app.get("/api/v1/bootstrap", async (c) => {

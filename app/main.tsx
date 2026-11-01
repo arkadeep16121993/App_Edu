@@ -256,6 +256,7 @@ function App() {
             selected: a.selected,
             correct: !!a.correct,
             hinted: !!a.hinted,
+            errorReason: a.error_reason ?? undefined,
             at: Date.now(),
           })),
           finished: false,
